@@ -1,0 +1,17 @@
+@keyframes shine {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  .group:hover .group-hover\:animate-shine {
+    animation: shine 0.5s ease-in-out;
+  }

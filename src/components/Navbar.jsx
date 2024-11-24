@@ -54,7 +54,7 @@ const Navbar = () => {
 
           {/* Get Started Button - Desktop */}
           <div className="hidden md:block">
-            <RainbowButton>Get Started</RainbowButton>
+            <Link to="/services"><RainbowButton>Get Started</RainbowButton></Link>
           </div>
         </div>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
           <NavLink to="/services">Services</NavLink>
           <NavLink to="/contact">Contact</NavLink>
           <div className="pt-2">
-            <RainbowButton className="w-full">Get Started</RainbowButton>
+            <Link to="/services"><RainbowButton className="w-full">Get Started</RainbowButton></Link>
           </div>
         </div>
       </nav>

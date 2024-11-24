@@ -49,15 +49,15 @@ export default function Home() {
 
   const navigateImage = (direction) => {
     if (selectedImage === null) return
-    const newIndex = direction === 'prev' 
-      ? (selectedImage - 1 + images.length) % images.length 
+    const newIndex = direction === 'prev'
+      ? (selectedImage - 1 + images.length) % images.length
       : (selectedImage + 1) % images.length
     setSelectedImage(newIndex)
   }
 
   return (
     <div className='bg-black'>
-      <motion.div 
+      <motion.div
         ref={heroRef}
         initial={{ opacity: 0 }}
         animate={heroInView ? { opacity: 1 } : {}}
@@ -74,7 +74,7 @@ export default function Home() {
         <img src={logo} alt="logo" className="relative bg-transparent w-80" />
         {/* <h1 className='text-yellow-400 font-extrabold bg-transparent relative text-3xl'>The Lemon Studio</h1> */}
 
-        <motion.div 
+        <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={heroInView ? { y: 0, opacity: 1 } : {}}
           transition={{ delay: 0.5, duration: 0.5 }}
@@ -102,8 +102,8 @@ export default function Home() {
 
         <div className="columns-2 md:columns-4 gap-4 mt-10 p-10">
           {images.map((src, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="mb-4 scroll-m-12"
               initial={{ opacity: 0, y: 20 }}
               animate={galleryInView ? { opacity: 1, y: 0 } : {}}
@@ -141,14 +141,14 @@ export default function Home() {
                 onClick={() => navigateImage('prev')}
                 aria-label="Previous image"
               >
-                <ChevronLeft className="w-10 h-10 text-black bg-transparent"/>
+                <ChevronLeft className="w-10 h-10 text-black bg-transparent" />
               </button>
               <button
                 className="bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full transition-colors"
                 onClick={() => navigateImage('next')}
                 aria-label="Next image"
               >
-                <ChevronRight className="w-10 h-10 text-black bg-transparent"/>
+                <ChevronRight className="w-10 h-10 text-black bg-transparent" />
               </button>
             </div>
           </div>
@@ -161,19 +161,20 @@ export default function Home() {
         animate={servicesInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        <h1 className='text-white text-center font-bold text-3xl mt-40'>Our Services</h1>
-        <h3 className='text-slate-400 text-center mt-2 mb-14'>We provide the best services for you</h3>
+        <h1 className='text-white text-center font-bold text-2xl md:text-3xl mt-20 md:mt-40'>Our Services</h1>
+        <h3 className='text-slate-400 text-center mt-2 mb-8 md:mb-14 px-4'>We provide the best services for you</h3>
 
-        <div className='flex flex-row gap-16 p-10 justify-center pb-20'>
+        <div className='flex flex-col md:flex-row gap-8 md:gap-16 p-4 md:p-10 justify-center pb-10 md:pb-20'>
           {['Wedding Photography', 'Baby Photoshoot', 'Fashion Photography'].map((service, index) => (
             <motion.div
               key={service}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={servicesInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: index * 0.2, duration: 0.5 }}
+              className="w-full md:w-auto"
             >
               <NeonGradientCard className="max-w-sm items-center justify-center text-center">
-                <span className="pointer-events-none font-bold z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#030203] from-35% to-[#ed8484] bg-clip-text text-center text-6xl leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+                <span className="pointer-events-none font-bold z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#030203] from-35% to-[#ed8484] bg-clip-text text-center text-xs md:text-6xl leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
                   <SparklesText text={service} className="text-black" />
                 </span>
               </NeonGradientCard>
